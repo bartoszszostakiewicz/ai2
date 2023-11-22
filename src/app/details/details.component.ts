@@ -1,26 +1,32 @@
-import {Component, inject} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {HousingLocation} from "../housinglocation";
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {HousingService} from "../housing.service";
+import {Person} from "../person";
+import {PersonLsService} from "../person-ls.service";
 
 @Component({
   selector: 'app-details',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
-export class DetailsComponent {
-  route: ActivatedRoute = inject(ActivatedRoute);
-  housingService = inject(HousingService);
-  housingLocation: HousingLocation | undefined;
+export class DetailsComponent implements OnInit{
 
-  constructor() {
-    const housingLocationId = Number(this.route.snapshot.params['id']);
-    this.housingService.getHousingLocationById(housingLocationId).then(housingLocation => {
-      this.housingLocation = housingLocation;
+  personId?: number;
+  person?: Person;
+
+  constructor(
+    private route: ActivatedRoute,
+    private personLsService: PersonLsService,
+  ) {
+  }
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.personId = params['id'];
+      this.person = this.personId
+        ? this.personLsService.getPerson(this.personId)
+        : undefined;
     });
   }
 
 }
+

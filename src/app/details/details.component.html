@@ -1,16 +1,34 @@
-<article>
-  <img class="listing-photo" [src]="housingLocation?.photo"
-       alt="Exterior photo of {{housingLocation?.name}}"/>
-  <section class="listing-description">
-    <h2 class="listing-heading">{{housingLocation?.name}}</h2>
-    <p class="listing-location">{{housingLocation?.city}}, {{housingLocation?.state}}</p>
-  </section>
-  <section class="listing-features">
-    <h2 class="section-heading">About this housing location</h2>
-    <ul>
-      <li>Units available: {{housingLocation?.availableUnits}}</li>
-      <li>Does this location have wifi: {{housingLocation?.wifi}}</li>
-      <li>Does this location have laundry: {{housingLocation?.laundry}}</li>
-    </ul>
-  </section>
-</article>
+<div class="details-container">
+
+  <div>
+    <a [routerLink]="'/'">&laquo; Back</a>
+  </div>
+
+  <div *ngIf="person" class="person">
+    <h2>{{ person.firstName }} {{ person.lastName }}</h2>
+
+    <dl class="info">
+      <dt>ID</dt>
+      <dd>{{ personId }}</dd>
+
+      <dt>Age</dt>
+      <dd>{{ person.age }}</dd>
+    </dl>
+
+    <dl *ngIf="person.address" class="address">
+      <dt>City:</dt>
+      <dd>{{ person.address.city }}</dd>
+
+      <dt>Street:</dt>
+      <dd>{{ person.address.street }}</dd>
+
+      <dt>Postcode</dt>
+      <dd>{{ person.address.postCode }}</dd>
+    </dl>
+  </div>
+
+  <div class="alert" *ngIf="!person">
+    <p>Person with ID {{ personId }} not found</p>
+  </div>
+
+</div>

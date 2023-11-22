@@ -1,71 +1,70 @@
-.listing-photo {
-  height: 600px;
-  width: 50%;
-  object-fit: cover;
-  border-radius: 30px;
-  float: right;
+/* Podstawowy reset stylów dla bezpieczeństwa */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.listing-heading {
-  font-size: 48pt;
-  font-weight: bold;
+.details-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.details-container > div {
   margin-bottom: 15px;
 }
 
-.listing-location::before {
-  content: url('/assets/geo-alt-fill.svg') / '';
+.details-container a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 1.1em;
 }
 
-.listing-location {
-  font-size: 24pt;
-  margin-bottom: 15px;
+.person {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
 }
 
-.listing-features > .section-heading {
-  color: var(--secondary-color);
-  font-size: 24pt;
-  margin-bottom: 15px;
+.person h2 {
+  margin-bottom: 10px;
 }
 
-.listing-features {
-  margin-bottom: 20px;
+.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  row-gap: 5px;
+  column-gap: 10px;
 }
 
-.listing-features li {
-  font-size: 14pt;
+.address {
+  margin-top: 10px;
 }
 
-li {
-  list-style-type: none;
-}
-
-.listing-apply .section-heading {
-  font-size: 18pt;
-  margin-bottom: 15px;
-}
-
-label, input {
-  display: block;
-}
-label {
-  color: var(--secondary-color);
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 12pt;
-}
-input {
-  font-size: 16pt;
-  margin-bottom: 15px;
+.alert {
+  background-color: #f8d7da;
+  color: #721c24;
   padding: 10px;
-  width: 400px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: solid .3px;
+  border-radius: 5px;
 }
-@media (max-width: 1024px) {
-  .listing-photo {
-    width: 100%;
-    height: 400px;
-  }
+
+.address {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.address dt {
+  width: 80px;
+  flex: 0 0 auto;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.address dd {
+  flex: 1 1 auto;
+  margin: 0;
+  margin-bottom: 5px;
 }
