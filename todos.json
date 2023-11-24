@@ -6,6 +6,20 @@
       "deadline": "1900-01-01",
       "completed": false,
       "archived": false
+    },
+    {
+      "title": "New task",
+      "deadline": "2023-11-10",
+      "completed": true,
+      "archived": true,
+      "id": 2
+    },
+    {
+      "title": "Test task",
+      "deadline": "2023-12-01",
+      "completed": false,
+      "archived": false,
+      "id": 3
     }
   ]
 }
