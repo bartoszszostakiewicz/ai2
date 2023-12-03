@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {TasksService} from "../tasks.service";
 import {Task} from "../task";
 import {forkJoin, Observable} from "rxjs";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-tasks',
@@ -53,7 +54,6 @@ export class TasksComponent implements OnInit {
   }
 
 
-
   archiveCompleted() {
     const observables: Observable<any>[] = [];
     for (const task of this.tasks) {
@@ -70,5 +70,16 @@ export class TasksComponent implements OnInit {
       this.ngOnInit();
     });
   }
+
+  canArchiveCompleted() {
+
+    return this.tasks.some(task => task.completed)
+
+  }
+
+  canAddTask() {
+    return !!this.newTask.title
+  }
+
 
 }

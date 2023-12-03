@@ -9,6 +9,16 @@ import {FormsModule} from "@angular/forms";
 import { ArchiveComponent } from './archive/archive.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from "@angular/material/icon";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatChipsModule} from "@angular/material/chips";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatInputModule} from "@angular/material/input";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatCardModule} from "@angular/material/card";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +32,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

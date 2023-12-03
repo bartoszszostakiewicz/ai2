@@ -1,46 +1,59 @@
+/* Styles for the main container */
 .container {
-  max-width: 800px;
-  margin: 0 auto;
+  width: 80%;
+  margin: auto;
   padding: 20px;
-  font-family: Arial, sans-serif;
+  background-color: var(--primary-color); /* Zmienna dla koloru tła */
 }
 
-h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.tasks {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 20px;
-}
-
-.task {
-  background-color: #f9f9f9;
+/* Styles for individual cards */
+mat-card {
+  border: 1px solid var(--secondary-color); /* Zmienna dla koloru obramowania */
+  margin-bottom: 15px;
   padding: 10px;
+  box-shadow: 0px 2px 5px var(--shadow-color); /* Zmienna dla koloru cienia */
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--accent-color); /* Zmienna dla koloru tła karty */
 }
 
-.title {
+/* Highlight completed tasks */
+mat-card.completed {
+  background-color: #e0e0e0; /* Można również użyć zmiennej */
+  color: var(--secondary-color); /* Zmienna dla koloru tekstu */
+}
+
+/* Card header styles */
+mat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Subtitle styling, typically for dates */
+mat-card-subtitle {
+  color: #9e9e9e; /* Można również użyć zmiennej */
+  font-size: 0.9em;
+}
+
+/* Title styling */
+mat-card-title {
   font-weight: bold;
-  margin-bottom: 8px;
+  color: #424242; /* Można również użyć zmiennej */
 }
 
-.deadline span {
-  color: #888;
+/* Styles for actions like delete button */
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.actions button {
-  padding: 8px 12px;
-  background-color: #d32f2f;
-  color: white;
+/* Button styling */
+button {
+  background-color: transparent;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
 }
 
-.actions button:hover {
-  background-color: #b71c1c;
+button mat-icon {
+  color: #f44336; /* Red color for delete icon; można użyć zmiennej */
 }
