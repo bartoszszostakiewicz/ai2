@@ -1,0 +1,83 @@
+main {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+
+/* Style for different authorization states */
+.unauthorized, .authorized, .admin {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Style only for unauthorized block */
+.unauthorized {
+  border-left: 4px solid #ff4136;
+}
+
+/* Style only for authorized block */
+.authorized {
+  border-left: 4px solid #2ecc40;
+}
+
+/* Style only for admin block */
+.admin {
+  border-left: 4px solid #0074d9;
+}
+
+/* Styling form elements */
+form {
+  margin-top: 20px;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Strong element styling for emphasis */
+strong {
+  color: #0074d9;
+}
+.error {
+  background-color: #ffdddd;
+  border-left: 4px solid #ff5f5f;
+  color: #d8000c;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeInError 0.5s;
+}
+
+
